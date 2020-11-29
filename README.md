@@ -1,4 +1,4 @@
-# HvH Wingman Server Plugins Pack
+# HvH 5v5 Server Plugins Pack
 <p align=center>
 This plugin pack is made for running a moderated 5v5 matches on private servers!
 
