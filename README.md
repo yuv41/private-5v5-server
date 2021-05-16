@@ -6,7 +6,7 @@ This plugin pack is made for running a moderated 5v5 matches on private servers!
  + Download the latest release.
  + Upload files to your gameserver.
 
-# Installation & Compiling
+# Compiling source & Installing
  + To install this sourcecode you'll need to compile all the plugins on your own.
  + Download the repository.
  + Head over to "*addons/sourcemod/scripting*"
