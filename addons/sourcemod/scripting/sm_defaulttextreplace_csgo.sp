@@ -74,20 +74,8 @@ public Action:new_output(Handle:timer, Handle:pack)
     new buffer_size = ReadPackCell(pack)+15;
     new String:buffer[buffer_size];
     ReadPackString(pack, buffer, buffer_size);
-
-    // Just use one of below lines, not multiple...
-    //Format(buffer, buffer_size, " \x01%s", buffer); // white
-    //Format(buffer, buffer_size, " \x02%s", buffer); // red
-    //Format(buffer, buffer_size, " \x03%s", buffer); //purple
+    //Chat SM Prefix Changer
     Format(buffer, buffer_size, " \x04[NewVision]\x01%s", buffer[4]); //purple [SM] prefix only
-    //Format(buffer, buffer_size, " \x04%s", buffer); // green
-    //Format(buffer, buffer_size, " \x05%s", buffer); // olive
-    //Format(buffer, buffer_size, " \x06%s", buffer); // lime
-    //Format(buffer, buffer_size, " \x07%s", buffer); // ligth red
-    //Format(buffer, buffer_size, " \x08%s", buffer); // grey
-    //Format(buffer, buffer_size, " \x09%s", buffer); // yellow
-    //Format(buffer, buffer_size, " \x0202 \x0303 \x0404 \x0505 \x0606 \x0707 \x0808 \x0909");
-    //PrintToServer("new %s", buffer);
 
     PbAddString(pb, "params", buffer);
     PbAddString(pb, "params", NULL_STRING);
