@@ -16,4 +16,8 @@ This plugin pack is made for running a moderated 5v5 matches on private servers!
  + Upload the folder plugins to your server plugins folder.
  + Upload the configs and other necessary files
 
- [Plugin List](https://github.com/yuv41/private-2v2-server/blob/main/PLUGINLIST.md)
+# Installation from release
+ + Download the latest release.
+ + Upload files to your gameserver.
+
+ # [Plugin List](https://github.com/yuv41/private-2v2-server/blob/main/PLUGINLIST.md)
