@@ -19,5 +19,6 @@ This plugin pack is made for running a moderated 5v5 matches on private servers!
  + <br><img src="https://shibe.center/HIYjfcW.gif" width="550" height="350">
  + Upload the folder plugins to your server plugins folder.
  + Upload the configs and other necessary files
-
+ 
+ # For support you can reach me trough [https://discord.newvision.pub](discord)
  # [Plugin List](https://github.com/yuv41/private-2v2-server/blob/main/PLUGINLIST.md)
