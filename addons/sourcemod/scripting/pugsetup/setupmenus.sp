@@ -1,6 +1,7 @@
 /**
  * Main .setup menu
  */
+
 public void SetupMenu(int client, bool displayOnly, int menuPosition) {
   Menu menu = new Menu(SetupMenuHandler);
   menu.SetTitle("%T", "SetupMenuTitle", client);
@@ -70,6 +71,10 @@ public void SetupMenu(int client, bool displayOnly, int menuPosition) {
     Format(buffer, sizeof(buffer), "%T: %s", "KnifeRoundOption", client, enabledString);
     AddMenuItem(menu, "knife", buffer, style);
   }
+
+    Format(buffer, sizeof(buffer), "16000$ Game: %s", g_bMaxMoney ? "enabled":"disabled");
+    AddMenuItem(menu, "money", buffer, style);
+
 
   // 6. autolive option
   if (g_DisplayAutoLive) {
@@ -159,7 +164,11 @@ public int SetupMenuHandler(Menu menu, MenuAction action, int param1, int param2
     } else if (StrEqual(buffer, "knife")) {
       g_DoKnifeRound = !g_DoKnifeRound;
       PugSetup_GiveSetupMenu(client, false, pos);
-
+      
+    } else if (StrEqual(buffer, "money")) {
+      g_bMaxMoney = !g_bMaxMoney;
+      PugSetup_GiveSetupMenu(client, false, pos);
+      
     } else if (StrEqual(buffer, "autolive")) {
       g_AutoLive = !g_AutoLive;
       PugSetup_GiveSetupMenu(client, false, pos);
@@ -240,6 +249,10 @@ public int TeamSizeHandler(Menu menu, MenuAction action, int param1, int param2)
   if (action == MenuAction_Select) {
     int client = param1;
     g_PlayersPerTeam = GetMenuInt(menu, param2);
+    if(g_PlayersPerTeam==1)
+    	ServerCommand("sv_visiblemaxplayers 3");
+   	else if(g_PlayersPerTeam==2)
+   		ServerCommand("sv_visiblemaxplayers 5");	
     PugSetup_GiveSetupMenu(client);
   } else if (action == MenuAction_Cancel && param2 == MenuCancel_ExitBack) {
     int client = param1;
